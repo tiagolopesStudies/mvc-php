@@ -33,7 +33,7 @@
             <a class="logo" href="./index.php"></a>
 
             <div class="cabecalho__icones">
-                <a href="./pages/send-video.html" class="cabecalho__videos"></a>
+                <a href="./pages/send-video.php" class="cabecalho__videos"></a>
                 <a href="./pages/login.html" class="cabecalho__sair">Sair</a>
             </div>
         </nav>
@@ -51,8 +51,8 @@
                     <img src="./img/logo.png" alt="logo canal alura">
                     <h3><?= $video['title'] ?></h3>
                     <div class="acoes-video">
-                        <a href="./pages/send-video.html">Editar</a>
-                        <a href="./pages/send-video.html">Excluir</a>
+                        <a href="./pages/send-video.php?video_id=<?= $video['id'] ?>">Editar</a>
+                        <a href="./action/delete-video-action.php?video_id=<?= $video['id'] ?>">Excluir</a>
                     </div>
                 </div>
             </li>

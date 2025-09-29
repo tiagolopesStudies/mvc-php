@@ -9,13 +9,18 @@ use Tiagolopes\Mvc\Database\Connection;
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../');
 $dotenv->load();
 
+$videoId = $_POST['video_id'];
+
+if (empty($videoId) || !is_numeric($videoId)) {
+    die('Invalid video ID.');
+}
+
 $title = $_POST['title'] ?? '';
 $url   = $_POST['url'] ?? '';
 
 $db = Connection::getInstance();
 
-$sql = 'INSERT INTO videos (title, url) VALUES (:TITLE, :URL)';
-
+$sql = 'UPDATE videos SET title = :TITLE, url = :URL WHERE id = :ID';
 $stmt = $db->prepare($sql);
 
 if ($stmt === false) {
@@ -24,6 +29,7 @@ if ($stmt === false) {
 
 $stmt->bindParam(':TITLE', $title);
 $stmt->bindParam(':URL', $url);
+$stmt->bindParam(':ID', $videoId, PDO::PARAM_INT);
 $stmt->execute();
 
 header('Location: /');
