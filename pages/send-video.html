@@ -20,7 +20,7 @@
     <header>
 
         <nav class="cabecalho">
-            <a class="logo" href="../index.html"></a>
+            <a class="logo" href="../index.php"></a>
 
             <div class="cabecalho__icones">
                 <a href="#" class="cabecalho__videos"></a>
@@ -32,7 +32,7 @@
 
     <main class="container">
 
-        <form class="container__formulario">
+        <form class="container__formulario" action="/action/create-video-action.php" method="post">
             <h2 class="formulario__titulo">Envie um vídeo!</h2>
                 <div class="formulario__campo">
                     <label class="campo__etiqueta" for="url">Link embed</label>
@@ -42,9 +42,9 @@
 
 
                 <div class="formulario__campo">
-                    <label class="campo__etiqueta" for="titulo">Titulo do vídeo</label>
-                    <input name="titulo" class="campo__escrita" required placeholder="Neste campo, dê o nome do vídeo"
-                        id='titulo' />
+                    <label class="campo__etiqueta" for="title">Titulo do vídeo</label>
+                    <input name="title" class="campo__escrita" required placeholder="Neste campo, dê o nome do vídeo"
+                        id='title' />
                 </div>
 
                 <input class="formulario__botao" type="submit" value="Enviar" />
