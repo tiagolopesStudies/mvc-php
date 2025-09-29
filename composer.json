@@ -1,0 +1,24 @@
+{
+    "name": "tiagolopes/mvc",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Tiagolopes\\Mvc\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Tiago Lopes",
+            "email": "tiagoltavares2002@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^8.4"
+    },
+    "scripts": {
+        "dev": [
+            "Composer\\Config::disableProcessTimeout",
+            "php -S localhost:8000"
+        ]
+    }
+}
