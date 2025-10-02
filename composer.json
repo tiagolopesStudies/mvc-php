@@ -20,7 +20,7 @@
     "scripts": {
         "dev": [
             "Composer\\Config::disableProcessTimeout",
-            "php -S localhost:8000"
+            "php -S localhost:8000 -t public"
         ]
     }
 }
